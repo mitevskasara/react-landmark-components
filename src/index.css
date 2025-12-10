@@ -1,0 +1,15 @@
+:root {
+  --border-radius: 3px;
+  --border-color: #cccccc;
+  --header-height: 32px;
+  --breadcrumb-height: 18px;
+  --footer-height: 28px;
+  --grid-gap: 1em;
+  --link-color: #2a52be;
+  --text-color: #000000;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
