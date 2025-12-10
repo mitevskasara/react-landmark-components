@@ -3,11 +3,12 @@ import React, { type ReactNode } from 'react';
 interface RegionProps {
   children?: ReactNode;
   label: string;
+  labeledBy: string;
 }
 
-const Region: React.FC<RegionProps> = ({ children, label }) => {
+const Region: React.FC<RegionProps> = ({ children, label, labeledBy }) => {
   return (
-    <div role="region" aria-label={label} className="region">
+    <div role="region" aria-label={label} aria-labelledby={labeledBy} className="region">
       {children}
     </div>
   );
