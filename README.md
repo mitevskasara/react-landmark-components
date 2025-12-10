@@ -7,15 +7,13 @@ This project demonstrates how to build a **fully accessible dashboard layout** i
 ## Features
 
 - **Reusable Landmark Components**
-  - `Header`, `Sidebar`, `MainContent`, `Footer`, and `Breadcrumbs`
+  - `Header`, `Sidebar`, `Main`, `Footer`, and `Breadcrumbs`
   - Custom `Region` component for non-standard sections
 - **Accessibility Focused**
   - Proper use of semantic HTML and ARIA roles
   - Screen-reader friendly navigation
 - **Flexible Layout**
-  - Built with CSS Grid (or Flexbox alternative)
-  - Sidebar, main content, and utility panels aligned and responsive
-
+  - Built with CSS Grid
 ---
 
 ## Project Structure
@@ -25,17 +23,19 @@ The project is organized to keep **components reusable** and layouts separate fr
 ```plaintext
 src/
 ├─ components/
-│  ├─ Header
-|  ├───index.tsx
-│  ├─ Sidebar
-|  ├───index.tsx
-│  ├─ Main
-|  ├───index.tsx
 │  ├─ Breadcrumbs
 |  ├───index.tsx
 │  ├─ Footer
 |  ├───index.tsx
-│  └─ Region
+│  ├─ Grid
+|  ├───index.tsx
+│  ├─ Header
+|  ├───index.tsx
+│  ├─ Main
+|  ├───index.tsx
+│  ├─ Region
+|  ├───index.tsx
+│  ├─ Sidebar
 |  ├───index.tsx
 ├─ layouts/
 │  └─ Dashboard.tsx
@@ -73,14 +73,14 @@ npm run dev
 ```
 import DashboardLayout from './layouts/DashboardLayout';
 
-const breadcrumbItems = [
+const breadcrumbs = [
   { label: 'Dashboard', href: '/dashboard' },
   { label: 'Reports', isCurrent: true },
 ];
 
 function DashboardPage() {
   return (
-    <DashboardLayout breadcrumbItems={breadcrumbItems}>
+    <DashboardLayout breadcrumbs={breadcrumbs}>
       <p>Welcome to your accessible dashboard!</p>
     </DashboardLayout>
   );
